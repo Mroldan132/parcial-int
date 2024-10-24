@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Empresa Comercial</title>
+  <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+</head>
+
+<body>
+  <script>
+    // Verificar si el usuario tiene un token
+    const token = localStorage.getItem('token');
+    if (!token) {
+      // Si no hay token, redirigir al login
+      window.location.href = '/login';
+    }
+  </script>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Gimansio Namaste</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Rutinas</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Planes</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#" id="logoutButton">Cerrar Sesión</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="./images/images/carrusel01.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="images/images/carrusel02.jpeg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="images/images/casrrusel03.jpg" class="d-block w-100" alt="...">
+      </div>
+    </div>
+  </div>
+
+</body>
+<script src="/javascripts/bootstrap.bundle.min.js"></script>
+<script>
+  const logoutButton = document.getElementById('logoutButton');
+  logoutButton.addEventListener('click', function (event) {
+    event.preventDefault();
+
+    localStorage.removeItem('token');
+
+    window.location.href = '/login';
+  });
+</script>
+
+</html>
