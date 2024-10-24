@@ -4,36 +4,85 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mi Empresa Comercial</title>
+  <title>Gimnasio Namaste</title>
   <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #000; /* Fondo negro */
+      color: #fff; /* Texto blanco */
+    }
+
+    .navbar-brand,
+    .nav-link {
+      color: #ffa500 !important; /* Naranja */
+    }
+
+    .nav-link:hover {
+      color: #fff !important;
+    }
+
+    .carousel-inner img {
+      height: 1000px;
+      object-fit: cover;
+    }
+
+    .section-title {
+      text-align: center;
+      color: #ffa500;
+      margin: 2rem 0;
+    }
+
+    .card {
+      background-color: #1a1a1a; /* Fondo oscuro para las cartas */
+      border: none;
+    }
+
+    .card-body {
+      color: #fff;
+    }
+
+    .btn-primary {
+      background-color: #ffa500;
+      border: none;
+    }
+
+    .btn-primary:hover {
+      background-color: #e69500;
+    }
+
+    footer {
+      background-color: #1a1a1a;
+      padding: 2rem;
+      text-align: center;
+      color: #ffa500;
+    }
+  </style>
 </head>
 
 <body>
   <script>
-    // Verificar si el usuario tiene un token
     const token = localStorage.getItem('token');
     if (!token) {
-      // Si no hay token, redirigir al login
       window.location.href = '/login';
     }
   </script>
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Gimansio Namaste</a>
+    <a class="navbar-brand" href="#">Gimnasio Namaste</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
+      <ul class="navbar-nav me-auto">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Rutinas</a>
+          <a class="nav-link" href="#rutinas">Rutinas</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Planes</a>
+          <a class="nav-link" href="#planes">Planes</a>
         </li>
       </ul>
       <ul class="navbar-nav ms-auto">
@@ -50,25 +99,102 @@
         <img src="./images/images/carrusel01.jpg" class="d-block w-100" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="images/images/carrusel02.jpeg" class="d-block w-100" alt="...">
+        <img src="./images/images/carrusel02.jpeg" class="d-block w-100" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="images/images/casrrusel03.jpg" class="d-block w-100" alt="...">
+        <img src="./images/images/carrusel03.jpg" class="d-block w-100" alt="...">
       </div>
     </div>
   </div>
+<section id="rutinas">
+  <h2 class="section-title">Rutinas de Gimnasio</h2>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h3 class="text-warning">Rutina de Fuerza</h3>
+        <p>
+          La rutina de fuerza está diseñada para maximizar el desarrollo muscular y la potencia física. Se enfoca en ejercicios compuestos como el press de banca, las sentadillas y el peso muerto.
+        </p>
+        <ul>
+          <li>Mejora el rendimiento en deportes de alto impacto.</li>
+          <li>Fortalece los músculos principales del cuerpo.</li>
+          <li>Ideal para quienes buscan ganar masa muscular.</li>
+        </ul>
 
+        <h3 class="text-warning">Rutina de Cardio</h3>
+        <p>
+          Si tu objetivo es mejorar tu resistencia y salud cardiovascular, esta rutina es perfecta para ti. Incluye actividades como correr, saltar la cuerda y ejercicios HIIT.
+        </p>
+        <ul>
+          <li>Quema calorías de manera eficiente.</li>
+          <li>Incrementa la capacidad pulmonar y la resistencia.</li>
+          <li>Excelente para quienes buscan perder peso y mantenerse activos.</li>
+        </ul>
+
+        <h3 class="text-warning">Rutina de Flexibilidad</h3>
+        <p>
+          Aumenta tu rango de movimiento y evita lesiones con esta rutina orientada a mejorar la flexibilidad. Ideal para complementar otros entrenamientos de fuerza o cardio.
+        </p>
+        <ul>
+          <li>Mejora la movilidad de las articulaciones.</li>
+          <li>Ayuda a la recuperación después de entrenamientos intensos.</li>
+          <li>Reduce el riesgo de lesiones a largo plazo.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <section id="planes">
+    <h2 class="section-title">Nuestros Planes</h2>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Plan Básico</h5>
+              <p class="card-text">Acceso al gimnasio en horarios limitados y uso básico de instalaciones.</p>
+              <a href="#" class="btn btn-primary">Ver más</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Plan Intermedio</h5>
+              <p class="card-text">Acceso completo al gimnasio y clases grupales incluidas.</p>
+              <a href="#" class="btn btn-primary">Ver más</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Plan Premium</h5>
+              <p class="card-text">Acceso total con entrenador personal y dieta personalizada.</p>
+              <a href="#" class="btn btn-primary">Ver más</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+  </section>
+
+  <footer>
+    <p>Gimnasio Namaste &copy; 2024</p>
+  </footer>
+
+  <script src="/javascripts/bootstrap.bundle.min.js"></script>
+  <script>
+    const logoutButton = document.getElementById('logoutButton');
+    logoutButton.addEventListener('click', function (event) {
+      event.preventDefault();
+      localStorage.removeItem('token');
+      window.location.href = '/login';
+    });
+  </script>
 </body>
-<script src="/javascripts/bootstrap.bundle.min.js"></script>
-<script>
-  const logoutButton = document.getElementById('logoutButton');
-  logoutButton.addEventListener('click', function (event) {
-    event.preventDefault();
-
-    localStorage.removeItem('token');
-
-    window.location.href = '/login';
-  });
-</script>
 
 </html>
